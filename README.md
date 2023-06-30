@@ -10,5 +10,4 @@ It is necessary to write a project that, using speech-to-text recognition engine
 
 1. TypeScript
 2. React (CRA)
-3. Context API
-4. Emotion
+3. react-speech-recognition
