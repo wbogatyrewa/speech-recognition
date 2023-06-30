@@ -1,6 +1,6 @@
 # Test task Speech Recognition
 
-This is a test task for ProgressTerra. Site located at http://speechrecognition.veronijo.beget.tech/
+This is a test task for ProgressTerra. Site located at https://wbogatyrewa.github.io/speech-recognition/
 
 ## Description
 
