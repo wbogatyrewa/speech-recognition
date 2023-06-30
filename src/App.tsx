@@ -8,6 +8,7 @@ function App(): JSX.Element {
   const [turnOn, setTurnOn] = useState<boolean>(false);
   const { transcript, resetTranscript, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
+  const [interimText, setInterimText] = useState<string>("");
   const [resultText, setResultText] = useState<string>("");
 
   const handleMicrophoneClick = () => {
@@ -31,14 +32,16 @@ function App(): JSX.Element {
   }, [turnOn]);
 
   useEffect(() => {
-    // parse and add random number (from 0 to 100) to every word
+    // add random number (from 0 to 100) to every word
     if (transcript) {
-      const randomNumberString = transcript
+      setInterimText(transcript);
+      const newString = transcript.slice(interimText.length + 1);
+      const randomNumberString = (newString || transcript)
         .split(" ")
         .map((word) => (word += Math.floor(Math.random() * 100)))
         .join(" ");
 
-      setResultText(randomNumberString);
+      setResultText(`${resultText} ${randomNumberString}`);
     }
   }, [transcript]);
 
